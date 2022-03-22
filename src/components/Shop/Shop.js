@@ -7,14 +7,17 @@ const Shop = () => {
         fetch('products.json')
             .then(res => res.json())
             .then(data => setProducts(data));
-    },[])
+    }, [])
+    
+    const eventhandler = () => {
+        console.log("paise");
+    }
     return (
         <div className='shop' >
             <div className='products'>
             {
-                products.map(product=><Product product={product}></Product>)
+                products.map(product=><Product key={product.id} product={product} eventhandler={eventhandler} ></Product>)
             }
-            <h1>Shop {products.length}</h1>
             </div>
             <div>
                 <h1>Cart Site</h1>
