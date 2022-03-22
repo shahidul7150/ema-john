@@ -1,0 +1,13 @@
+.shop{
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+}
+.products{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+}
+.products img{
+    width: 250px;
+    height: 250px;
+}
