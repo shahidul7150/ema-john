@@ -11,7 +11,7 @@ const Product = (props) => {
             <div className='card-text' >
                 <div>
                 <p className='product-name'>{name.slice(0,18)}....</p>
-                <p className='price'>Price: ${price}</p>
+                <p className='price'>Prices: ${price}</p>
                 </div>
                 <div className='text-gap'>
                 <p>Manufacture: {seller}</p>
