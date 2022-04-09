@@ -39,8 +39,10 @@
     border-radius:0 0 10px 10px;
     font-size: 14px;
     font-weight: 600;
+    cursor: pointer;
 }
 .product-info button:hover{
     background-color: orange;
     color: #fff;
+
 }
