@@ -1,4 +1,4 @@
-.item-parent{
+.product{
     position: relative;
     height: 500px;
     margin-bottom: 20px;
@@ -15,7 +15,7 @@
     font-weight: 500;
     
 }
-.card-text{
+.product-info{
     text-align: start;
     padding: 0 10px;
     
@@ -27,7 +27,7 @@
     line-height: 5px;
     color: rgb(51, 49, 49);
 }
-.card-text button{
+.product-info button{
     width: 100%;
     height: 40px;
     position: absolute;
@@ -40,7 +40,7 @@
     font-size: 14px;
     font-weight: 600;
 }
-.card-text button:hover{
+.product-info button:hover{
     background-color: orange;
     color: #fff;
 }

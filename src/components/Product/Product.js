@@ -1,14 +1,14 @@
 import React from 'react';
 import './Product.css'
-const Product = (props) => {
+const Product = ({product,handleAddToCart}) => {
     // console.log(props);
 
-    const { name, img, price, seller, ratings } = props.product;
+    const { name, img, price, seller, ratings } =product;
     
     return (
-        <div className='item-parent'>
+        <div className='product'>
             <img src={img} alt="" />
-            <div className='card-text' >
+            <div className='product-info' >
                 <div>
                 <p className='product-name'>{name.slice(0,18)}....</p>
                 <p className='price'>Prices: ${price}</p>
@@ -17,7 +17,7 @@ const Product = (props) => {
                 <p>Manufacture: {seller}</p>
                 <p>Rating: {ratings} Stars</p>
                 </div>
-                <button onClick={()=>props.handleAddToCart(props.product)} > <p>Add to cart</p> </button>
+                <button onClick={()=>handleAddToCart(product)} className="btn-cart" > <p className='btn-text'>Add to cart</p></button>
             </div>
         </div>
     );

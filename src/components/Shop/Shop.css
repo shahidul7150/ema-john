@@ -1,17 +1,17 @@
-.shop{
+.shop-container{
     display: grid;
     grid-template-columns: 8fr 3fr;
     margin-left: 56px;
     
 }
-.products{
+.products-container{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 40px;
     margin-top: 30px;
     
 }
-.products img{
+.products-container img{
     width: 250px;
     height: 250px;
     padding: 5px;
@@ -20,5 +20,5 @@
     background-color: rgba(255,153,0,0.3);
     margin-left: 50px;
     text-align: start;
-    padding: 0 20px;
+    padding: 30px 20px;
 }
