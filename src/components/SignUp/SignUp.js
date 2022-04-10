@@ -1,12 +1,21 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init'
 import "./SignUp.css";
+
+
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [error, setError] = useState("");
+    const [error, setError] = useState("");
+    const navigate=useNavigate()
 
+
+
+    const [createUserWithEmailAndPassword,user]=useCreateUserWithEmailAndPassword(auth)
+    
   const handlerEmailBlur = (event) => {
     setEmail(event.target.value);
   };
@@ -15,13 +24,24 @@ const SignUp = () => {
   };
   const handlerConfirmPasswordBlur = (event) => {
     setConfirmPassword(event.target.value);
-  };
+    };
+    
+    if (user) {
+    navigate('/shop')
+}
+
   const handleCreateUser = (event) => {
       event.preventDefault();
       if (password !== confirmPassword) {
           setError('Your two password did not match')
           return
       }
+      if (password.length < 6) {
+          setError('Password must be 6 character or longer');
+          return;
+      }
+      createUserWithEmailAndPassword(email, password)
+
   };
 
   return (
@@ -36,7 +56,7 @@ const SignUp = () => {
               onBlur={handlerEmailBlur}
               type="email"
               name="email"
-              id=""
+              
               required
             />
           </div>
@@ -47,7 +67,7 @@ const SignUp = () => {
               onBlur={handlerPasswordBlur}
               type="password"
               name="password"
-              id=""
+              
               required
             />
           </div>
@@ -58,11 +78,12 @@ const SignUp = () => {
               onBlur={handlerConfirmPasswordBlur}
               type="password"
               name="password"
-              id=""
+             
               required
             />
                   </div>
-                  <p style={{color:'red'}}>{error}</p>
+                  <p style={{color:'red'}}>{error }</p>
+                  <p style={{color:'red'}}>{ }</p>
           <input className="form-submit" type="submit" value="SignUp" />
         </form>
         <p>
