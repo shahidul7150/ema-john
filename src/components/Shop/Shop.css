@@ -22,3 +22,16 @@
     text-align: start;
     padding: 30px 20px;
 }
+.pagination button{
+    margin-bottom: 50px;
+    margin-left:5px;
+    padding: 10px 12px;
+    background: #fff;
+    border: 1px solid lightsalmon;
+    cursor: pointer;
+
+}
+.pagination .selected{
+    background-color: orange;
+    color: #fff;
+}
